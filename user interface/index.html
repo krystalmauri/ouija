@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<script
+  src="https://code.jquery.com/jquery-3.1.1.min.js"
+  integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+  crossorigin="anonymous"></script>
+</head>
+<body>
+
+
+<p id="test">sdf</p>
+
+
+
+
+<script>
+/*
+	- letters
+	
+	 for loop that runs through each letter and adds it to the document
+	
+	
+	
+	- input
+	- pictures
+	- yes and no
+*/
+
+/*
+	declare a variable to hold the first letter
+	
+	// var myvariable = 'ZD';
+	
+	for loop -- google it
+	
+		push letter to screen -- $("body").append(myvariable)
+		incremnmt letter (google how to increment letters)
+		
+	
+*/
+
+var myLetter = 'A';
+
+for(var i = 0; i<26; i++){
+	$("body").append('<span class="letter">' + myLetter + '</span>');
+	myLetter = incrementChar(myLetter);
+}
+
+var myLetters = $(".letter");
+
+
+
+myLetters.on('mouseover', function() {
+	$(this).css({color: 'red'});
+});   
+myLetters.on('mouseleave', function() {
+	$(this).css({color: 'green'});
+});  
+$("#test").on('click', function() {
+	$(this).text('Tie');
+});  
+
+function incrementChar(c) {
+    return String.fromCharCode(c.charCodeAt(0) + 1)
+}
+
+</script>
+
+</body>
+</html>
